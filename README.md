@@ -46,4 +46,4 @@ See the [provider docs](https://registry.terraform.io/providers/tiagoasousa/wiz/
 
 We welcome your contribution. Please understand that the experimental nature of this repository means that contributing code may be a bit of a moving target. If you have an idea for an enhancement or bug fix, and want to take on the work yourself, please first create an issue so that we can discuss the implementation with you before you proceed with the work.
 
-You can review our [contribution guide](.github/CONTRIBUTING.md) to begin. You can also check out our frequently asked questions.
+You can review the [contribution guide](.github/CONTRIBUTING.md) to begin. You can also check out our frequently asked questions.
