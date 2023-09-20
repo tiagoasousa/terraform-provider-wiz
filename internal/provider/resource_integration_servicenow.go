@@ -106,9 +106,9 @@ func resourceWizIntegrationServiceNow() *schema.Resource {
 				),
 			},
 		},
-		CreateContext: resourceWizIntegrationAwsServiceNowCreate,
-		ReadContext:   resourceWizIntegrationAwsServiceNowRead,
-		UpdateContext: resourceWizIntegrationAwsServiceNowUpdate,
+		CreateContext: resourceWizIntegrationServiceNowCreate,
+		ReadContext:   resourceWizIntegrationServiceNowRead,
+		UpdateContext: resourceWizIntegrationServiceNowUpdate,
 		DeleteContext: resourceWizIntegrationDelete,
 		Importer: &schema.ResourceImporter{
 			StateContext: schema.ImportStatePassthroughContext,
@@ -116,8 +116,8 @@ func resourceWizIntegrationServiceNow() *schema.Resource {
 	}
 }
 
-func resourceWizIntegrationAwsServiceNowCreate(ctx context.Context, d *schema.ResourceData, m interface{}) (diags diag.Diagnostics) {
-	tflog.Info(ctx, "resourceWizIntegrationAwsServiceNowCreate called...")
+func resourceWizIntegrationServiceNowCreate(ctx context.Context, d *schema.ResourceData, m interface{}) (diags diag.Diagnostics) {
+	tflog.Info(ctx, "resourceWizIntegrationServiceNowCreate called...")
 
 	// define the graphql query
 	query := `mutation CreateIntegration($input: CreateIntegrationInput!) {
@@ -153,11 +153,11 @@ func resourceWizIntegrationAwsServiceNowCreate(ctx context.Context, d *schema.Re
 	// set the id
 	d.SetId(data.CreateIntegration.Integration.ID)
 
-	return resourceWizIntegrationAwsServiceNowRead(ctx, d, m)
+	return resourceWizIntegrationServiceNowRead(ctx, d, m)
 }
 
-func resourceWizIntegrationAwsServiceNowRead(ctx context.Context, d *schema.ResourceData, m interface{}) (diags diag.Diagnostics) {
-	tflog.Info(ctx, "resourceWizIntegrationAwsServiceNowRead called...")
+func resourceWizIntegrationServiceNowRead(ctx context.Context, d *schema.ResourceData, m interface{}) (diags diag.Diagnostics) {
+	tflog.Info(ctx, "resourceWizIntegrationServiceNowRead called...")
 
 	// check the id
 	if d.Id() == "" {
@@ -275,8 +275,8 @@ func resourceWizIntegrationAwsServiceNowRead(ctx context.Context, d *schema.Reso
 	return diags
 }
 
-func resourceWizIntegrationAwsServiceNowUpdate(ctx context.Context, d *schema.ResourceData, m interface{}) (diags diag.Diagnostics) {
-	tflog.Info(ctx, "resourceWizIntegrationAwsServiceNowUpdate called...")
+func resourceWizIntegrationServiceNowUpdate(ctx context.Context, d *schema.ResourceData, m interface{}) (diags diag.Diagnostics) {
+	tflog.Info(ctx, "resourceWizIntegrationServiceNowUpdate called...")
 
 	// check the id
 	if d.Id() == "" {

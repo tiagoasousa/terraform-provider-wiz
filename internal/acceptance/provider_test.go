@@ -35,6 +35,8 @@ func testAccPreCheck(t *testing.T, tc TestCase) {
 		envVars = commonEnvVars
 	case TcUser:
 		envVars = append(commonEnvVars, "WIZ_SMTP_DOMAIN")
+	case TcSlackBot:
+		envVars = append(commonEnvVars, "WIZ_INTEGRATION_SLACKBOT_TOKEN")
 	case TcServiceNow:
 		envVars = append(commonEnvVars, "WIZ_INTEGRATION_SERVICENOW_URL", "WIZ_INTEGRATION_SERVICENOW_USERNAME", "WIZ_INTEGRATION_SERVICENOW_PASSWORD")
 	case TcJira:

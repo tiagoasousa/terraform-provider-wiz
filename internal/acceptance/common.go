@@ -13,6 +13,8 @@ const (
 	TcCommon TestCase = "COMMON"
 	// TcUser test case
 	TcUser TestCase = "USER"
+	// TcSlackBot test case
+	TcSlackBot TestCase = "SLACK_BOT"
 	// TcServiceNow test case
 	TcServiceNow TestCase = "SERVICE_NOW"
 	// TcJira test case
