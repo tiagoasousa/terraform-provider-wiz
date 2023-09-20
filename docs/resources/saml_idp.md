@@ -115,5 +115,6 @@ Required:
 - `role` (String) Wiz Role name
 
 Optional:
+
 - `description` (String) Description
 - `projects` (List of String) Project mapping
