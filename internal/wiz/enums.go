@@ -172,7 +172,9 @@ var ServiceAccountType = []string{
 	"THIRD_PARTY",
 	"SENSOR",
 	"KUBERNETES_ADMISSION_CONTROLLER",
+        "KUBERNETES_CONNECTOR",
 	"BROKER",
+
 }
 
 // DiskScanVulnerabilitySeverity enum

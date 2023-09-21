@@ -26,6 +26,7 @@ resource "wiz_integration_slackbot" "default" {
 ### Required
 
 - `name` (String) The name of the integration.
+- `slack_token` (String) Slack Token. (default: none, environment variable: WIZ_INTEGRATION_SLACK_TOKEN)
 
 ### Optional
 
@@ -37,7 +38,6 @@ resource "wiz_integration_slackbot" "default" {
         - All Resources, Restrict this Integration to global roles only
 
     - Defaults to `All Resources, Restrict this Integration to global roles only`.
-- `slack_token` (String) Slack Token. (default: none, environment variable: WIZ_INTEGRATION_SLACK_TOKEN)
 
 ### Read-Only
 

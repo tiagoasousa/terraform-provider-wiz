@@ -47,6 +47,7 @@ resource "wiz_service_account" "helm" {
         - admin:digital_trust_settings
         - admin:identity_providers
         - admin:projects
+        - admin:project_dashboards
         - admin:reports
         - admin:security_settings
         - admin:users
@@ -59,12 +60,15 @@ resource "wiz_service_account" "helm" {
         - create:cloud_event_rules
         - create:connectors
         - create:controls
+        - create:dashboards
         - create:host_configuration
         - create:integrations
+        - create:ignore_rules
         - create:outposts
         - create:reports
         - create:run_action
         - create:run_control
+        - create:run_integration_action
         - create:saved_cloud_event_filters
         - create:saved_graph_queries
         - create:scan_policies
@@ -80,7 +84,9 @@ resource "wiz_service_account" "helm" {
         - delete:cloud_event_rules
         - delete:connectors
         - delete:controls
+        - delete:dashboards
         - delete:host_configuration
+        - delete:ignore_rules
         - delete:integrations
         - delete:outposts
         - delete:reports
@@ -102,15 +108,21 @@ resource "wiz_service_account" "helm" {
         - read:cloud_events
         - read:connectors
         - read:controls
+        - read:dashboards
+        - read:data_findings
+        - read:data_classifiers
         - read:digital_trust_settings
         - read:host_configuration
+        - read:ignore_rules
         - read:integrations
         - read:inventory
         - read:issue_settings
         - read:issues
         - read:kubernetes_clusters
         - read:licenses
+        - read:network_exposure
         - read:outposts
+        - read:preview_hub
         - read:projects
         - read:reports
         - read:resources
@@ -118,11 +130,13 @@ resource "wiz_service_account" "helm" {
         - read:saved_graph_queries
         - read:scan_policies
         - read:scanner_settings
+        - read:sensors
         - read:security_frameworks
         - read:security_scans
         - read:security_settings
         - read:service_accounts
         - read:system_activities
+        - read:threats
         - read:users
         - read:vulnerabilities
         - update:admission_controllers
@@ -133,7 +147,9 @@ resource "wiz_service_account" "helm" {
         - update:cloud_event_rules
         - update:connectors
         - update:controls
+        - update:dashboards
         - update:host_configuration
+        - update:ignore_rules
         - update:integrations
         - update:inventory
         - update:issue_settings
@@ -157,6 +173,7 @@ resource "wiz_service_account" "helm" {
         - write:connectors
         - write:controls
         - write:host_configuration
+        - write:integrations
         - write:issue_settings
         - write:issues
         - write:outposts
@@ -174,6 +191,7 @@ resource "wiz_service_account" "helm" {
         - THIRD_PARTY
         - SENSOR
         - KUBERNETES_ADMISSION_CONTROLLER
+        - KUBERNETES_CONNECTOR
         - BROKER
 
     - Defaults to `THIRD_PARTY`.
